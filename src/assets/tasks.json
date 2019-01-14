@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Task 1",
+        "parent": "Parent Task 1",
+        "priority": 10,
+        "start": "10/09/2019",
+        "end": "10/26/2019"
+    },
+    {
+        "name": "Task 2",
+        "parent": "Parent Task 2",
+        "priority": 20,
+        "start": "10/09/2019",
+        "end": "10/26/2019"
+    },
+    {
+        "name": "Task 3",
+        "parent": "Parent Task 3",
+        "priority": 30,
+        "start": "10/09/2019",
+        "end": "10/26/2019"
+    }
+]
