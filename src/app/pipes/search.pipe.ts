@@ -38,6 +38,24 @@ export class SearchPipe implements PipeTransform {
         return true;
     });
 
+    if (typeof startDate !== 'undefined' && startDate !== '') {
+      console.log("Filter StartDate: " + startDate)
+      tasks = tasks.filter(task => {
+        console.log(task.start);
+        if (task.start == startDate)
+          return true;
+      });
+    }
+
+    if (typeof endDate !== 'undefined' && endDate !== '') {
+      console.log("Filter EndDate: " + endDate)
+      tasks = tasks.filter(task => {
+        //console.log(task.end);
+        if (task.end == endDate)
+          return true;
+      });
+    }
+
     return tasks;
   }
 

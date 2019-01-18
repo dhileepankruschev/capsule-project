@@ -27,12 +27,14 @@
     </div>
     <div class="col-md-3">
       <label>Start Date
-        <input type="text" #start (keyup)="0" class="form-control" placeholder="Enter start date" aria-label="Start Date" aria-describedby="basic-addon1">
+        <input type="date" [ngModel]="stdt | date : 'yyyy-MM-dd'" (ngModelChange)="stdt = $event" class="form-control">
+        <!--<input type="date" ng-model="startmodel" #start class="form-control" placeholder="Enter start date" aria-label="Start Date" aria-describedby="basic-addon1">-->
       </label>
     </div>
     <div class="col-md-3">
       <label>End Date
-        <input type="text" #end (keyup)="0" class="form-control" placeholder="Enter end date" aria-label="End Date" aria-describedby="basic-addon1">
+        <input type="date" [ngModel]="enddt | date : 'yyyy-MM-dd'" (ngModelChange)="enddt = $event" class="form-control">
+        <!--<input type="date" #end class="form-control" placeholder="Enter end date" aria-label="End Date" aria-describedby="basic-addon1">-->
       </label>
     </div>
   </div>
@@ -48,7 +50,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let task of taskList | search:name.value:parent.value:priorityFrm.value:priorityTo.value ;let i=index ">
+    <tr *ngFor="let task of taskList | search:name.value:parent.value:priorityFrm.value:priorityTo.value:stdt:enddt ;let i=index ">
       <td>{{task.name}}</td>
       <td>{{task.parent}}</td>
       <td>{{task.priority}}</td>
